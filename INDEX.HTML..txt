@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Profesional - Entrenamiento & Fútbol</title>
+    <style>
+        :root { --primary: #2ecc71; --dark: #121212; --light: #f9f9f9; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: #333; }
+        nav { background: var(--dark); padding: 15px; text-align: center; color: white; border-bottom: 3px solid var(--primary); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80'); 
+                background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; }
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); }
+        .price { font-size: 2rem; font-weight: bold; margin: 15px 0; color: var(--primary); }
+        .booking-box { background: var(--dark); color: white; padding: 40px; border-radius: 20px; margin-top: 40px; text-align: center; }
+        select { padding: 15px; width: 100%; max-width: 400px; border-radius: 8px; font-size: 1rem; margin-bottom: 20px; }
+        .btn-whatsapp { background: var(--primary); color: white; padding: 20px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; display: inline-block; cursor: pointer; border: none; }
+        footer { background: #111; color: #777; text-align: center; padding: 30px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+<nav><strong>LICENCIADO EN EDUCACIÓN FÍSICA</strong></nav>
+
+<section class="hero">
+    <h1>ENTRENAMIENTO PROFESIONAL</h1>
+    <p>Fútbol - Acondicionamiento - Recreación</p>
+</section>
+
+<div class="container">
+    <div class="pricing-grid">
+        <div class="card">
+            <h3>Clase Suelta</h3>
+            <div class="price">$50.000</div>
+            <p>Ideal para diagnóstico inicial.</p>
+        </div>
+        <div class="card">
+            <h3>Bono 8 Sesiones</h3>
+            <div class="price">$350.000</div>
+            <p>Plan mensual de alto rendimiento.</p>
+        </div>
+        <div class="card">
+            <h3>Fútbol Élite</h3>
+            <div class="price">$450.000</div>
+            <p>Tecnificación específica individual.</p>
+        </div>
+    </div>
+
+    <div class="booking-box">
+        <h2>¿Listo para empezar?</h2>
+        <p>Selecciona tu plan y hablemos por WhatsApp:</p>
+        <select id="plan-selector">
+            <option value="Clase Individual">Clase Individual</option>
+            <option value="Bono Mensual">Bono Mensual (8 Sesiones)</option>
+            <option value="Plan Futbol Pro">Plan Fútbol Profesional</option>
+        </select>
+        <br>
+        <button class="btn-whatsapp" onclick="enviarWhatsapp()">Reservar mi Cupo</button>
+    </div>
+</div>
+
+<footer>&copy; 2026 | Profesionalismo en el Deporte</footer>
+
+<script>
+    function enviarWhatsapp() {
+        const plan = document.getElementById('plan-selector').value;
+        const telefono = "573000000000"; // <-- CAMBIA ESTO POR TU NÚMERO REAL
+        const mensaje = `Hola Licenciado, estoy interesado en el plan: ${plan}.`;
+        window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    }
+</script>
+</body>
+</html>
